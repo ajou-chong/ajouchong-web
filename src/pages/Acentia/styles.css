@@ -1,0 +1,99 @@
+.acentia-info {
+    text-align: left;
+    max-width: 660px;
+    margin: auto;
+    padding-top: var(--spacing-sm);
+}
+
+.acentia-name {
+    margin-bottom: 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.acentia-description {
+    font-size: 1.1rem;
+    line-height: 1.3;
+    max-width: none;
+    margin: var(--spacing-xs) 0;
+}
+
+.video-section {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.video-title {
+    font-size: 1.15rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.video-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.video-player {
+    width: 100%;
+    max-width: 800px;
+    border-radius: var(--radius-normal);
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition-normal);
+}
+
+.video-player:hover {
+    transform: scale(1.01);
+}
+
+/* ============ goods =============== */
+
+.goods-grid {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.goods-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.goodsImg {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--secondary-color);
+    transition: var(--transition-normal);
+    object-fit: cover;
+}
+
+.goods-row.top-row .goodsImg {
+    max-width: 300px;
+}
+
+.goods-row.bottom-row .goodsImg {
+    max-width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.goods-row.bottom-row .slogan-img {
+    max-width: 500px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.goods-text {
+    margin-top: var(--spacing-sm);
+    font-size: var(--font-base);
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.goodsImg:hover {
+    transform: scale(1.03);
+}

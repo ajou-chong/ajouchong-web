@@ -1,0 +1,88 @@
+.controls-container {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+    gap: var(--spacing-lg);
+}
+
+.controls-container .search-container {
+    flex: 0 0 auto;
+    max-width: 400px;
+    margin: 0;
+}
+
+.controls-container .write-container {
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.write-button {
+    padding: var(--spacing-sm) var(--spacing-xl);
+    font-size: var(--font-base);
+    background-color: var(--bg-light);
+    color: var(--text-muted);
+    border: none;
+    border-radius: var(--radius-normal);
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.write-button:hover {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+}
+
+textarea {
+    resize: none;
+    height: 150px;
+}
+
+@media screen and (max-width: 768px) {
+    .controls-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--spacing-md);
+    }
+    
+    .controls-container .search-container {
+        max-width: none;
+    }
+    
+    .controls-container .write-container {
+        align-self: center;
+    }
+    
+    .write-button {
+        padding: var(--spacing-sm) var(--spacing-lg);
+        font-size: var(--font-sm);
+    }
+    
+    textarea {
+        height: 120px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .controls-container {
+        gap: var(--spacing-sm);
+        margin-top: var(--spacing-lg);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .controls-container .search-container {
+        max-width: 100%;
+    }
+    
+    .write-button {
+        padding: var(--spacing-xs) var(--spacing-md);
+        font-size: var(--font-sm);
+        min-width: 100px;
+    }
+    
+    textarea {
+        height: 100px;
+    }
+} 

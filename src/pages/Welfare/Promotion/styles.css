@@ -1,0 +1,21 @@
+.promotion-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-xl);
+}
+
+.promotion-box {
+    width: 100%;
+    max-width: 1200px;
+    height: 600px;
+    border: none;
+    border-radius: var(--radius-normal);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    margin-top: var(--spacing-xl);
+    background-color: var(--bg-primary);
+}
