@@ -25,6 +25,7 @@ const Avatar = ({ src, alt }) => {
 };
 
 /** 하나의 박스 (회장단 or 각 국) */
+// eslint-disable-next-line no-unused-vars
 function GroupBox({ title, roles = [], desc, members }) {
   const isThreeRoles = roles.length === 3;
   const hasManyMembers = members && members.length >= 4;
@@ -99,6 +100,7 @@ function GroupBox({ title, roles = [], desc, members }) {
 
 const Organization = () => {
 
+  // eslint-disable-next-line no-unused-vars
   const allDivisions = [
     {
       title: "회장단",
@@ -316,7 +318,7 @@ const Organization = () => {
       <hr className="titleSeparator" />
 
       <div className="org-panel">
-        <div className="org-grid">
+        {/* <div className="org-grid">
           {allDivisions.map((division, index) => (
             <GroupBox
               key={index}
@@ -326,6 +328,12 @@ const Organization = () => {
               members={division.members}
             />
           ))}
+        </div> */}
+        <div className="organizationTextBox">
+            <div className="organizationText">
+              <p>중앙비상대책위원회 운영중입니다.</p>
+              <a href="/introduction/history" target="_blank" rel="noopener noreferrer">역대 학생회 소개 바로가기</a>
+            </div>
         </div>
       </div>
     </div>
