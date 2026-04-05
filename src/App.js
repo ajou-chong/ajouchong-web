@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
 import './styles/variables.css';
 import './styles/utilities.css';
 import './styles/common.css';
@@ -8,12 +9,12 @@ import './App.css';
 import Header from './components/Header/Header';
 import Breadcrumb from './components/Header/Breadcrumb';
 import Footer from './components/Footer';
+import FeedbackWidget from './components/FeedbackWidget';
 
 import Main from './pages/Main';
 
 import About from './pages/Introduction/About';
 import Organization from './pages/Introduction/Organization';
-import PromiseComponent from './pages/Introduction/Promise';
 import Map from './pages/Introduction/Map';
 import History from './pages/Introduction/History';
 import Campusmap from './pages/Introduction/Campusmap';
@@ -37,6 +38,7 @@ import Promotion from './pages/Welfare/Promotion';
 import Rental from './pages/Welfare/Rental';
 
 import Profile from './pages/Auth/Profile';
+import Admin from './pages/Admin';
 import LinkHub from './pages/LinkHub';
 
 import Sitemap from './pages/Utility/Sitemap';
@@ -56,6 +58,7 @@ function App() {
           <div className="content">
             <Content />
           </div>
+          <FeedbackWidget />
           <Footer />
         </div>
       </Router>
@@ -76,7 +79,6 @@ const Content = () => {
         {/* Introduction */}
         <Route path="/introduction/about" element={<About />} />
         <Route path="/introduction/organization" element={<Organization />} />
-        <Route path="/introduction/promise" element={<PromiseComponent />} />
         <Route path="/introduction/history" element={<History />} />
         <Route path="/introduction/history/:year" element={<CouncilDetail />} /> {/* ✅ 상세 라우트 */}
         <Route path="/introduction/map" element={<Map />} />
@@ -111,6 +113,14 @@ const Content = () => {
 
         {/* Etc */}
         <Route path="/profile" element={<Profile />} />
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute requiredRole="ADMIN">
+              <Admin />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/linkHub" element={<LinkHub />} />
         <Route path="/sitemap" element={<Sitemap />} />
         <Route path="/policy/termsofservice" element={<Termsofservice />} />
